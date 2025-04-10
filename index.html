@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Knowledge Sharing Webpage</title>
+    <style>
+        /* Basic Reset and Body Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        header img {
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+            border-radius: 5px;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Article Cards */
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            float: right;
+            margin-top: -10px;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Banner Section -->
+    <header style="
+    position: relative;
+    background-image: url('https://i.imghippo.com/files/PCTz8429dRQ.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 5px solid #ddd;
+">
+    <!-- Overlay for readability -->
+    <div style="
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    "></div>
+
+    <!-- Banner Content -->
+    <div style="z-index: 2; max-width: 1000px;">
+        <h1 style="font-size: 3em; margin-bottom: 10px;">Welcome to My World</h1>
+        <p style="font-size: 1.2em; margin-bottom: 30px;">
+            Sharing knowledge, life stories, and experiences—from tech to treasured family moments.
+        </p>
+
+        <!-- Image Gallery -->
+        <div style="display: flex; justify-content: center; gap: 40px;">
+            <!-- You -->
+            <div>
+                <img 
+                    src="https://i.imghippo.com/files/fIs6306eVg.jpg" 
+                    alt="Me" 
+                    style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+                <p style="margin-top: 10px; font-weight: bold;">Me</p>
+            </div>
+
+            <!-- Son -->
+            <div>
+                <img 
+                    src="https://i.imghippo.com/files/BPw2111uU.jpeg" 
+                    alt="Son" 
+                    style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+                <p style="margin-top: 10px; font-weight: bold;">My Son</p>
+            </div>
+
+            <!-- Wife -->
+            <div>
+                <img 
+                    src="https://i.imghippo.com/files/TYf4650fLg.jpg" 
+                    alt="Wife" 
+                    style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+                <p style="margin-top: 10px; font-weight: bold;">My Wife</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section style="padding: 40px; background-color: #f9f9f9;">
+    <h2 style="text-align: center; margin-bottom: 20px;">📸 Family Moments Gallery</h2>
+
+    <!-- Scrolling Container -->
+    <div style="
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+    ">
+
+        <!-- Individual Photo Blocks -->
+        <img src="https://i.imghippo.com/files/OIkD9607XSo.jpg" style="height: 180px; border-radius: 10px;" alt="Family">
+        <img src="https://i.imghippo.com/files/BPw2111uU.jpeg" style="height: 180px; border-radius: 10px;" alt="Son">
+        <img src="https://i.imghippo.com/files/fIs6306eVg.jpg" style="height: 180px; border-radius: 10px;" alt="Work">
+        <img src="https://i.imghippo.com/files/TYf4650fLg.jpg" style="height: 180px; border-radius: 10px;" alt="Wife">
+        <img src="https://i.imghippo.com/files/PCTz8429dRQ.jpg" style="height: 180px; border-radius: 10px;" alt="Background">
+        <!-- Add more photos here -->
+    </div>
+</section>
+
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#articles">Articles</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#login" onclick="openModal()">Login</a>
+        <a href="#register" onclick="openModal()">Register</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="#social">Social Links</a>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="content" id="articles">
+        <h2>Articles</h2>
+        <div class="card-container">
+            <!-- Article Card 1 -->
+            <div class="card">
+                <!-- Adding the article image -->
+                <img src="https://i.imghippo.com/files/BPw2111uU.jpeg" alt="Article Image" style="width: 100%; height: auto; border-radius: 10px;">
+                <h3>My First Article</h3>
+                <p>Sharing my thoughts on the importance of knowledge sharing and personal growth.</p>
+            </div>            
+
+            <!-- Article Card 2 -->
+            <div class="card">
+                <!-- Adding the work experiences image -->
+                <img src="https://i.imghippo.com/files/fIs6306eVg.jpg" alt="Work Experiences Image" style="width: 100%; height: auto; border-radius: 10px;">
+                <h3>Work Experiences</h3>
+                <p>My journey through different projects in the tech industry and lessons learned.</p>
+            </div>            
+
+            <!-- Article Card 3 -->
+            <div class="card">
+                <!-- Adding the family moments image -->
+                <img src="https://i.imghippo.com/files/TYf4650fLg.jpg" alt="Family Moments" style="width: 100%; height: auto; border-radius: 10px;">
+                <h3>Family Moments</h3>
+                <p>Beautiful memories with my loved ones—moments I cherish and want to share with the world.</p>
+            </div>            
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Connect with me on social media:</p>
+        <a href="https://facebook.com" target="_blank">Facebook</a> | 
+        <a href="https://twitter.com" target="_blank">Twitter</a> | 
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </footer>
+
+    <!-- Modal for Login/Register -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <input type="text" placeholder="Username" required><br><br>
+                <input type="password" placeholder="Password" required><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Open the modal
+        function openModal() {
+            document.getElementById("loginModal").style.display = "block";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById("loginModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
